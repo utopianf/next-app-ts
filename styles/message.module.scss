@@ -1,0 +1,321 @@
+@import "doctor.module";
+@import "common_parts.module";
+
+
+.layout {
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  height: 100vh;
+  font-size: 16px;
+
+  > * {
+    //padding: 0;
+    margin: 0;
+    //display: flex;
+  }
+}
+
+.message_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  inset: 0;
+  background-color: #ffffff;
+  color: #333333;
+  padding-bottom: 50px;
+
+  .message {
+    color: #222222;
+    font-size: medium;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 135%;
+    background-color: #ffffff;
+    width: 320px;
+
+    @include pc {
+      width: 564px;
+    }
+
+    @include tab {
+      width: 564px;
+    }
+
+    > p {
+      text-align: center;
+      margin-top: 24px;
+      margin-bottom: 26px;
+      font-weight: 900;
+      font-size: 21px;
+      letter-spacing: 0.05rem;
+
+      > span {
+        font-size: 14px;
+        margin-top: 6px;
+        color: #FF0909;
+        font-weight:bold;
+      }
+    }
+
+
+
+    .form {
+      margin-bottom: 12px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 320px;
+      text-align: left;
+
+      > label {
+        display: block;
+        width: 320px;
+        font-size: 16px;
+      }
+
+      > label::after {
+        content: "*︎";
+        font-size: 18px;
+        color: #FF0909;
+      }
+
+      > input {
+        appearance: none;
+        border-radius: 4px;
+        padding: 8px 12px 8px 12px;
+        box-sizing: border-box;
+        background: #fafafa;
+        font-size: 16px;
+        border: 1px solid #E0E0E0;
+        width: 320px;
+        height: 44px;
+
+
+        &:focus {
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          border-color: #0070f3;
+        }
+
+        @include pc {
+          width: 564px;
+        }
+
+        @include tab {
+          width: 564px;
+        }
+      }
+
+
+      .select_style {
+        position: relative;
+        display: inline-flex;
+        width: 100%;
+        margin-bottom: 4px;
+        margin-top: 4px;
+
+        @include pc {
+          height: 44px;
+          width: 562px;
+        }
+
+        @include tab {
+          height: 44px;
+          width: 562px;
+        }
+
+
+        > select {
+          display: block;
+          appearance: none;
+          border-radius: 4px;
+          width: 100%;
+          height: 44px;
+          border: 1px solid #E0E0E0;
+          padding: 8px 16px 8px 16px;
+          box-sizing: border-box;
+          background: #fafafa;
+          font-size: 16px;
+
+          &:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+            border-color: #0070f3;
+          }
+
+
+        }
+      }
+    }
+
+
+
+    .text_form {
+      width: 320px;
+
+      @include pc {
+        width: 564px;
+      }
+
+      @include tab {
+        width: 564px;
+      }
+
+      > textarea {
+        appearance: none;
+        border-radius: 4px;
+        resize: vertical;
+        width: 100%;
+        line-height: 1.25;
+        padding: 8px 12px 8px 12px;
+        box-sizing: border-box;
+        font-size: 16px;
+        border: 1px solid #E0E0E0;
+        background: #fafafa;
+        min-height: 120px;
+
+        //@include pc {
+        //  width: 564px;
+        //}
+
+
+        &:focus {
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          border-color: #0070f3;
+        }
+
+      }
+
+      .length {
+        color: #4F4F4F;
+        text-align: start;
+        justify-content: flex-end;
+        display: flex;
+      }
+
+    }
+
+    .display_radio {
+      margin-bottom: 12px;
+      width: 320px;
+
+      > label {
+        display: block;
+        width: 320px;
+        font-size: 16px;
+      }
+
+      > label::after {
+        content: "*";
+        font-size: 18px;
+        color: #FF0909;
+      }
+
+      > div {
+        display: flex;
+        margin: 0;
+      }
+
+      .radio_frame {
+        background: #fafafa;
+        border: 1px solid #E0E0E0;
+        box-sizing: border-box;
+        border-radius: 4px;
+        width: 90px;
+        height: 44px;
+        margin-right: 12px;
+        align-items: center;
+        display: flex;
+        font-size: 16px;
+
+
+        input[type="radio"] {
+          margin: 0 9px 0 10px;
+          line-height: 1.25;
+        }
+      }
+    }
+
+    .radio {
+      display: block;
+      appearance: none;
+      border-radius: 4px;
+      width: 320px;
+      height: 44px;
+      border: 1px solid #E0E0E0;
+      padding: 12px 13px 12px 9px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background: #fafafa;
+      justify-content: start;
+      margin-bottom: 4px;
+
+      input[type="radio"] {
+        margin-right: 13px;
+        line-height: 1.25;
+      }
+    }
+
+
+
+
+    .icon {
+      font-size: 16px;
+      pointer-events: none;
+      position: absolute;
+      right: 0;
+      display: flex;
+      height: 100%;
+      width: 12%;
+      align-items: center;
+      justify-content: center;
+      color: #828282;
+      border-left: 1px solid #E0E0E0;
+      box-sizing: border-box;
+      padding: 0 12px 0 12px;
+
+      > svg {
+        width: 10px;
+      }
+
+
+      @include pc {
+        width: 8%;
+        padding: 0 15px 0 15px;
+      }
+
+      @include tab {
+        width: 8%;
+        padding: 0 15px 0 15px;
+      }
+    }
+  }
+  .div_btn {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 23px;
+    justify-items: center;
+
+    .button {
+
+      //@include button(#0070f3, 8px, #fff, 16px, 250px)
+      @include button_parts(linear-gradient(#296CB5, #135A9C), #003E73, #ffffff, 340px, 16px);
+
+    }
+
+    .non_btn {
+      @include button_parts(#B0C4DE, #4682B4, #ffffff, 100%, 13px)
+    }
+  }
+}

@@ -1,0 +1,696 @@
+@import "common_parts.module";
+
+.doctor {
+  > footer {
+    position: fixed;
+    bottom: 0;
+  }
+  position: relative;
+}
+
+.head_group {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  flex-direction: column;
+  color: #333333;
+
+  .title1 {
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 135%;
+    color: #333333;
+    display: flex;
+    text-align: center;
+    margin: 15px 0 10px 0;
+
+    @include pc {
+      font-size: 36px;
+      margin: 37px 0 21px 0;
+    }
+
+    @include tab {
+      font-size: 28px;
+      margin: 27px 0  10px 0;
+    }
+  }
+
+  .step_group {
+    margin-bottom: 12px;
+    display: flex;
+
+    @include pc {
+      margin-bottom: 39px;
+    }
+
+    @include tab {
+      margin-bottom: 29px;
+    }
+
+
+    .step {
+      position: relative;
+      padding: 6px 3px 8px 3px;
+      background-color: #00877F;
+      color: white;
+      display: inline-block;
+      text-align: center;
+      width: 75px;
+      border-radius: 5px;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 1.2;
+      margin-right: 8px;
+
+
+
+      @include pc {
+        font-size: 12px;
+        width: 95px;
+        padding: 8px 5px 14px 5px;
+      }
+      > div {
+        font-size: 14px;
+        line-height: 180%;
+
+        @include pc {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .step:nth-of-type(-n+2):after {
+      content: "";
+      width: 0;
+      height: 0;
+      border: none;
+      border-left: solid 8px #A39307;
+      border-bottom: solid 4px transparent;
+      border-top: solid 4px transparent;
+      position: absolute;
+      top: 27px;
+      right: -9px;
+
+      @include pc {
+        top: 30px;
+      }
+    }
+
+    .final_step {
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.2;
+      text-align: center;
+      color: white;
+      width: 60px;
+      background-color: #A39307;
+      border-radius: 5px;
+      padding: 15px 3px 0 3px;
+
+
+      @include pc {
+        width: 90px;
+        padding-top: 25px;
+      }
+    }
+  }
+
+  .hospital_num {
+    width: 100%;
+    background-color: #005E87;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 135%;
+    font-weight: 600;
+    padding: 10px 0 7px 0;
+
+    @include pc {
+      padding: 14px;
+    }
+
+
+    > span {
+      font-size: 18px;
+      font-weight: 600;
+
+      @include tab {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.doctor_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  inset: 0;
+  background-color: #E4E4E4;
+  color: #333333;
+  padding-bottom: 183px;
+  box-sizing: border-box;
+
+  @include pc {
+    padding-bottom: 200px;
+  }
+
+
+  .list {
+    padding: 0;
+    margin-top: 12px;
+    @include pc {
+      margin-top: 30px;
+      width: 1060px;
+      display: flex;
+      flex-wrap: wrap;
+      > div {
+        box-sizing: border-box;
+        margin: 0 50px 24px 0;
+
+        &:nth-of-type(3n) {
+          margin-right: 0;
+        }
+      }
+    }
+
+    @include tab {
+      width: 678px;
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      > div {
+        box-sizing: border-box;
+        margin: 0 38px 16px 0;
+
+        &:nth-of-type(2n) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.doctor_div {
+  border-radius: 8px 8px 8px 8px;
+  display: block;
+  width: 320px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px 10px;
+  > * {
+    padding: 0;
+    margin: 0;
+  }
+
+
+  @include pc {
+    &:hover {
+      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, .15), 0 0 5px rgba(0, 0, 0, .1);
+      transform: translateY(-4px);
+    }
+  }
+
+  .doctor_div__profile {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 4px;
+    }
+
+    .doctor_hospital {
+      line-height: 120%;
+
+      > div {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+
+      .address {
+        font-size: 11px;
+        font-weight: normal;
+        color: #828282;
+        line-height: 0.9rem;
+        margin-top: 5px;
+        flex-wrap: nowrap;
+      }
+    }
+
+    .doctor_address {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      position: absolute;
+      right: 3px;
+      top: 5px;
+
+      > div {
+      display: flex;
+      flex-direction: row;
+      width: 47px;
+      height: 14px;
+      background: #005E87;
+      border-radius: 16px;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      font-size: 9px;
+      }
+    }
+
+    .doctor_div__profile_name {
+      width: 177px;
+      height: 100px;
+      background-color: #F2F2F2;
+      margin-left: 3px;
+      padding: 4px;
+      border-radius: 4px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      font-size: 10px;
+      line-height: 1.25;
+
+
+      > * {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      //Note: 子以下全てに適応
+      p {
+        margin: 0;
+      }
+
+    }
+
+
+  }
+
+  .doctor_div__lower {
+    width: 100%;
+
+    .info_group {
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 10px;
+
+      .hospital_info {
+        font-weight: 600;
+        font-size: 10px;
+        width: 94px;
+        height: 82px;
+        margin-right: 9px;
+        padding: 6px 0;
+        background-color: #F2F2F2;
+        border-radius: 4px;
+
+        &:nth-of-type(3n){
+          margin-right: 0;
+        }
+
+        > div {
+          margin: 0;
+          font-weight: bold;
+          font-size: 24px;
+          line-height: 170%;
+        }
+
+        >span {
+          font-weight: normal;
+        }
+      }
+    }
+
+    > details {
+      font-weight: 600;
+      font-size: 14px;
+      margin: 15px;
+
+      > summary {
+        margin-bottom: 8px;
+      }
+      > span {
+        font-weight: normal;
+      }
+    }
+
+    .introduction {
+      font-weight: 600;
+      font-size: 14px;
+      margin-left: 15px;
+      margin-bottom: 10px;
+    }
+    .list_doctor {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin-bottom: 10px;
+
+
+      .doctor_prof {
+        box-sizing: border-box;
+        margin-right: 8px;
+        //margin: auto;
+        &:nth-of-type(3n) {
+          margin-right: 0;
+        }
+
+        img {
+          width: 95px;
+          height: 95px;
+        }
+
+        .doctor_profile {
+          width: 95px;
+          height: auto;
+          background-color: #F2F2F2;
+          padding: 2px;
+          border-radius: 4px;
+          box-sizing: border-box;
+
+          .doctor_info {
+            font-size: 10px;
+            padding: 0 3px;
+            line-height: 120%;
+            margin: 5px 0;
+            font-weight: normal;
+
+
+            > * {
+              margin: 0;
+            }
+
+            .doctor_name {
+              font-weight: bold;
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+
+
+      .btn {
+        background-color: #F8FCFF;
+        border: solid 1px #F8FCFF;
+        border-radius: 4px;
+        width: 300px;
+        font-size: 13px;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 7px 0;
+
+                        //$pdl, $wd, $ht, $mt, $bdw, $bc,  $br, $checkWd, $checkHt, $checkMt, $checkLt
+        @include checkbox(25px, 20px, 20px, -10px,  3px, #ffffff,  0px, 12px, 8px, -5px, 4px);
+      }
+
+  .non_checked_btn {
+
+    background-color: white;
+    border: solid 1px #BDBDBD;
+    border-radius: 4px;
+    width: 300px;
+    font-size: 13px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 7px 0;
+
+        //$pdl, $wd, $ht, $mt, $bdw, $bc,  $br, $checkWd, $checkHt, $checkMt, $checkLt
+        @include checkbox(25px, 20px, 20px, -10px,  3px, #ffffff,  0px, 12px, 8px, -5px, 4px)
+
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 50px;
+  width: 100vw;
+  height: auto;
+  //background: linear-gradient(180deg, rgba(#ffffff,0.3) 0%, rgba(#ffffff,1) 20%, rgba(#ffffff,1) 40%, rgba(#ffffff,0.5) 100%);
+  background-color: white;
+  padding-bottom: 12px;
+  text-align: center;
+
+
+  .title {
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
+
+  .button_center {
+    text-align: center;
+
+    .button {
+      @include button_parts(linear-gradient(#FF9C00,#BA7200), #C77A00, #ffffff, 340px, 16px);
+      font-weight: 600;
+    }
+  }
+
+  .footer__checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    margin: 18px 0 12px 0;
+
+    .check_all {
+      //$pdl, $wd, $ht, $mt, $bdw, $bc, $br, $checkWd, $checkHt, $checkMt, $checkLt
+      @include checkbox(25px, 20px, 20px, -10px,  3px, #ffffff,  0px, 12px, 8px, -5px, 4px)
+    }
+  }
+}
+
+.button_center_s {
+  text-align: center;
+  position: fixed;
+  bottom: 70px;
+  width: 100vw;
+
+
+  .button_out_s {
+    display: inline-block;
+    background: white;
+    border: solid 1px #888686;
+    box-sizing: border-box;
+    box-shadow: 3px 3px  10px rgb(100, 100, 100);
+    border-radius: 40px;
+    cursor: pointer;
+    width: 250px;
+    height: 70px;
+
+    .button_s {
+      display: block;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      background: #f3772e;
+      background: linear-gradient(#f3772e 6%, #f1d0c3 7%, darkorange 40%, #f3772e 50%,  darkorange 65%, #f3a86d 100%);
+      border: solid 1px #b7aeae;
+      box-sizing: border-box;
+      box-shadow: 1px 1px  3px rgba(100, 100, 100, 0.5);
+      border-radius: 40px;
+      color: white;
+      cursor: pointer;
+      width: 240px;
+      height: 60px;
+      word-break: keep-all;
+      font-size: 26px;
+      font-weight: 600;
+      -webkit-text-stroke: 1px orange;
+      letter-spacing: -2px;
+    }
+  }
+}
+
+
+.confirm {
+  position: relative;
+
+  > {
+    box-sizing: border-box;
+  }
+
+  > footer {
+    position: fixed;
+    bottom: 0;
+  }
+}
+
+.overlay {
+  width: 100vw;
+  min-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  background-color: #E4E4E4;
+  padding-bottom: 180px;
+
+
+  @include pc {
+    padding-bottom: 300px;
+  }
+  > div {
+    box-sizing: border-box;
+  }
+
+
+  .modal_title {
+    text-align: center;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    margin: 34px 0 19px 0;
+
+    @include pc {
+      margin-top: 100px;
+    }
+  }
+
+  .text {
+    text-align: left;
+    color: #EB5757;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 19px;
+    margin: auto;
+  }
+
+  .check {
+    font-style: normal;
+    font-weight: normal;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    font-size: 14px;
+    width: 280px;
+    margin: 20px auto;
+
+    @include pc {
+      width: 500px;
+    }
+
+    .check_confirm {
+      margin-left: 10px;
+                       //$pdl, $wd, $ht, $mt, $bdw, $bc,  $br ,$checkWd, $checkHt, $checkMt, $checkLt
+      @include checkbox(35px, 25px, 25px, -12px, 4px, #E4E4E4, 5px, 15px, 8px, -5px, 5px)
+    }
+  }
+
+  .rule {
+    width: 280px;
+    border: solid 1px lightgray;
+    height: 260px;
+    text-align: center;
+    background-color: #fafafa;
+    margin: auto;
+    overflow: scroll;
+    max-width: 800px;
+
+    @include pc {
+      width: 500px;
+      height: 300px;
+    }
+  }
+}
+
+.footer_btn {
+  text-align: center;
+  position: fixed;
+  bottom: 50px;
+  width: 100vw;
+  height: auto;
+  background-color: white;
+  padding-bottom: 12px;
+  padding-top: 19px;
+
+  .modal_button {
+    @include button_parts(linear-gradient(#296CB5, #135A9C), #003E73, #ffffff, 340px, 16px);
+  }
+
+  .disable_btn {
+    @include button_parts(#E4E4E4, #E4E4E4, black, 340px, 16px);
+  }
+
+}
+
+.cancel {
+  font-size: 13px;
+  font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  font-weight: normal;
+  text-align: center;
+  line-height: 19px;
+  color: #0C76B1;
+  cursor: pointer;
+  margin-top: 7px;
+}
+
+.error_overlay {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  .error_content {
+    width: 320px;
+    height: auto;
+    margin: auto;
+    z-index: 2;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 15px;
+
+
+    .error_text {
+      text-align: center;
+      color: #EB5757;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 13px;
+      line-height: 19px;
+    }
+
+    .close {
+      font-size: 13px;
+      font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+      font-weight: normal;
+      text-align: center;
+      line-height: 19px;
+      color: #0C76B1;
+      cursor: pointer;
+      margin: 15px 0 21px 0;
+    }
+  }
+}

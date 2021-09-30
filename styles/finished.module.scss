@@ -1,0 +1,42 @@
+@import "common_parts.module";
+.container {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+
+  > div {
+    width: 85%;
+    margin: auto;
+    color: #222222;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1.0;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+
+
+    @include pc {
+      width: 40%;
+    }
+
+    @include tab {
+      width: 60%;
+    }
+  }
+
+
+  .title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 21px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+
+  .sub_text {
+    text-align: start;
+    font-size: 14px;
+    line-height: 135%;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #005E87;
+  }
+}

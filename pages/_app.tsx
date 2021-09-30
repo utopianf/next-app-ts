@@ -1,7 +1,10 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "styles/globals.css";
+import "styles/ress.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return (
+      <Component {...pageProps} style={{ padding: 0, margin: 0 }} />
+  );
 }
-export default MyApp
+
+export default MyApp;
